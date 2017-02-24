@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Classified</title>
+	 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+	 <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.min.css">
+	 <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="ngClassifieds"  ng-controller="classifiedsCtrl">
+<md-toolbar>
+	<div class="md-toolbar-tools">
+		<p><strong>ngClassifieds</strong></p>
+		<md-button>
+			<md-icon style="height: auto;" class="mdi mdi-plus-circle"></md-icon>New Classified
+		</md-button>
+	</div>
+</md-toolbar>
+<md-content class="padding" layout="row" layout-wrap>
+	 <md-card flex="30" ng-repeat="classified in classifieds">
+	 	 <img class="card-image" src="images/image.jpg" alt="">
+	 	  <md-card-content>
+	 	  	<div class="classified-info">
+	 	  		<h2 class="md-title">{{ classified.title }}</h2>
+	 	  		 <h2>{{  classified.created | date:'longDate' }}</h2>
+	 	  		<h3>{{ classified.price | currency}}</h3>
+	 	  		<p>{{ classified.content }}</p>
+	 	  	</div>
+	 	  </md-card-content>
+	 </md-card>
+</md-content>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="components/classifieds.ctr.js"></script>
+</body>
+</html>
